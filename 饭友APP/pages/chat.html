@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#FFD100">
+    <title>拼饭群聊 - 饭友</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body>
+    <div id="app">
+        <!-- 状态栏占位 -->
+        <div class="status-bar"></div>
+        
+        <!-- 导航栏 -->
+        <header class="nav-header chat-header">
+            <div class="nav-content">
+                <button class="nav-back" onclick="history.back()">
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <polyline points="15,18 9,12 15,6"/>
+                    </svg>
+                </button>
+                <div class="chat-info">
+                    <h1 class="nav-title">午餐拼饭群</h1>
+                    <div class="chat-members">
+                        <div class="member-avatars" id="memberAvatars">
+                            <!-- 成员头像 -->
+                        </div>
+                        <span class="member-count" id="memberCount">4人</span>
+                    </div>
+                </div>
+                <button class="nav-btn" id="groupInfoBtn">
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="1"/>
+                        <circle cx="19" cy="12" r="1"/>
+                        <circle cx="5" cy="12" r="1"/>
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <!-- 聊天区域 -->
+        <main class="chat-main">
+            <div class="chat-messages" id="chatMessages">
+                <!-- 系统消息 -->
+                <div class="message-item system-message">
+                    <div class="message-content">
+                        <span>欢迎来到拼饭群！快来讨论今天吃什么吧 🍽️</span>
+                    </div>
+                    <div class="message-time">12:05</div>
+                </div>
+                
+                <!-- 消息将通过JavaScript动态生成 -->
+            </div>
+        </main>
+
+        <!-- 餐厅选择固定栏 -->
+        <div class="restaurant-selector" id="restaurantSelector">
+            <button class="restaurant-btn" id="selectRestaurantBtn">
+                <svg class="btn-icon" viewBox="0 0 24 24">
+                    <path d="M3 2v7c0 5.55 4.45 10 10 10s10-4.45 10-10V2"/>
+                    <path d="M3 2h18"/>
+                </svg>
+                <span>选择餐厅</span>
+            </button>
+        </div>
+
+        <!-- 输入区域 -->
+        <footer class="chat-input-area">
+            <div class="input-container">
+                <div class="input-actions">
+                    <button class="action-btn" id="voiceBtn">
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+                            <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                            <line x1="12" y1="19" x2="12" y2="23"/>
+                            <line x1="8" y1="23" x2="16" y2="23"/>
+                        </svg>
+                    </button>
+                </div>
+                
+                <div class="text-input-wrapper">
+                    <input type="text" class="message-input" id="messageInput" placeholder="输入消息...">
+                </div>
+                
+                <div class="input-actions">
+                    <button class="action-btn" id="shareBtn">
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <circle cx="18" cy="5" r="3"/>
+                            <circle cx="6" cy="12" r="3"/>
+                            <circle cx="18" cy="19" r="3"/>
+                            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+                            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+                        </svg>
+                    </button>
+                    <button class="send-btn" id="sendBtn">
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <line x1="22" y1="2" x2="11" y2="13"/>
+                            <polygon points="22,2 15,22 11,13 2,9 22,2"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- 餐厅选择弹窗 -->
+    <div class="modal-overlay" id="restaurantModal" style="display: none;">
+        <div class="modal-content restaurant-modal">
+            <div class="modal-header">
+                <h3>选择餐厅</h3>
+                <button class="modal-close" id="closeRestaurantModal">
+                    <svg viewBox="0 0 24 24">
+                        <line x1="18" y1="6" x2="6" y2="18"/>
+                        <line x1="6" y1="6" x2="18" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="restaurant-list" id="modalRestaurantList">
+                    <!-- 餐厅列表将通过JavaScript生成 -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/utils.js"></script>
+    <script src="../js/components.js"></script>
+    <script src="../js/chat.js"></script>
+</body>
+</html>

@@ -1,0 +1,1008 @@
+/* ===== 首页样式 ===== */
+
+/* 搜索区域 */
+.search-section {
+  padding: var(--spacing-lg) 0;
+}
+
+.search-container {
+  margin-bottom: var(--spacing-sm);
+}
+
+/* 快捷拼饭区域 */
+.quick-join-section {
+  margin-bottom: var(--spacing-xl);
+  text-align: center;
+}
+
+#startPinFanBtn {
+  width: 100%;
+  background: linear-gradient(135deg, var(--primary-color) 0%, #FFE066 100%);
+  box-shadow: 0 4px 12px rgba(255, 209, 0, 0.3);
+}
+
+#startPinFanBtn:hover {
+  box-shadow: 0 6px 16px rgba(255, 209, 0, 0.4);
+  transform: translateY(-1px);
+}
+
+/* 餐厅区域 */
+.restaurants-section {
+  margin-bottom: var(--spacing-xl);
+}
+
+.section-header {
+  margin-bottom: var(--spacing-lg);
+}
+
+.section-title {
+  font-size: var(--font-size-title);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.section-subtitle {
+  font-size: var(--font-size-small);
+  color: var(--text-secondary);
+}
+
+.restaurants-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.load-more {
+  text-align: center;
+  padding: var(--spacing-lg);
+  font-size: var(--font-size-small);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: color var(--transition-fast) ease;
+}
+
+.load-more:hover {
+  color: var(--primary-color);
+}
+
+/* ===== 匹配页面样式 ===== */
+.matching-page {
+  text-align: center;
+  padding-top: var(--spacing-xl);
+}
+
+/* 匹配进度 */
+.matching-progress {
+  margin-bottom: var(--spacing-xxl);
+}
+
+.progress-circle {
+  position: relative;
+  display: inline-block;
+  margin-bottom: var(--spacing-xl);
+}
+
+.progress-ring {
+  transform: rotate(-90deg);
+}
+
+.progress-track {
+  fill: none;
+  stroke: var(--border-color);
+  stroke-width: 4;
+}
+
+.progress-bar {
+  fill: none;
+  stroke: var(--primary-color);
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-dasharray: 314;
+  stroke-dashoffset: 314;
+  transition: stroke-dashoffset 1s ease;
+  animation: progressPulse 2s ease-in-out infinite;
+}
+
+.progress-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.matching-icon {
+  width: 40px;
+  height: 40px;
+  color: var(--primary-color);
+  animation: spin 2s linear infinite;
+}
+
+.matching-title {
+  font-size: var(--font-size-title);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.matching-subtitle {
+  font-size: var(--font-size-body);
+  color: var(--text-secondary);
+}
+
+@keyframes progressPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+/* 匹配条件 */
+.matching-conditions {
+  text-align: left;
+  margin-bottom: var(--spacing-xl);
+}
+
+.conditions-title {
+  font-size: var(--font-size-subtitle);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-lg);
+}
+
+.conditions-list {
+  background-color: var(--background-secondary);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.condition-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-md) 0;
+}
+
+.condition-item:not(:last-child) {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.condition-icon {
+  width: 24px;
+  height: 24px;
+  color: var(--primary-color);
+  flex-shrink: 0;
+}
+
+.condition-content {
+  flex: 1;
+}
+
+.condition-label {
+  display: block;
+  font-size: var(--font-size-small);
+  color: var(--text-secondary);
+  margin-bottom: 2px;
+}
+
+.condition-value {
+  display: block;
+  font-size: var(--font-size-body);
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+/* 推荐用户 */
+.recommended-users {
+  text-align: left;
+  margin-bottom: var(--spacing-xl);
+}
+
+.users-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-lg);
+}
+
+.users-title > span:first-child {
+  font-size: var(--font-size-subtitle);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.users-count {
+  font-size: var(--font-size-small);
+  color: var(--text-secondary);
+}
+
+.users-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+  gap: var(--spacing-lg);
+  padding: var(--spacing-lg);
+  background-color: var(--background-secondary);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.user-avatar-small {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-circle);
+  object-fit: cover;
+  border: 2px solid var(--border-color);
+  transition: all var(--transition-fast) ease;
+}
+
+.user-avatar-small:hover {
+  border-color: var(--primary-color);
+  transform: scale(1.1);
+}
+
+/* 匹配操作 */
+.matching-actions {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+/* 匹配成功弹窗 */
+.success-modal {
+  text-align: center;
+  padding: var(--spacing-xxl) var(--spacing-xl);
+}
+
+.success-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto var(--spacing-xl);
+  background-color: var(--success-color);
+  border-radius: var(--radius-circle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: successPop 0.6s ease-out;
+}
+
+.success-icon svg {
+  width: 40px;
+  height: 40px;
+  color: white;
+  stroke-width: 3;
+}
+
+.success-title {
+  font-size: var(--font-size-title);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.success-text {
+  font-size: var(--font-size-body);
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-xl);
+}
+
+.matched-users {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-xl);
+}
+
+.matched-users .user-avatar-small {
+  border-color: var(--success-color);
+}
+
+@keyframes successPop {
+  0% { 
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% { 
+    transform: scale(1.2);
+  }
+  100% { 
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ===== 聊天页面样式 ===== */
+.chat-header {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.chat-info {
+  flex: 1;
+  text-align: center;
+}
+
+.chat-members {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  margin-top: 2px;
+}
+
+.member-avatars {
+  display: flex;
+  align-items: center;
+}
+
+.member-avatars .user-avatar-small {
+  width: 24px;
+  height: 24px;
+  margin-left: -4px;
+  border: 1px solid var(--background-secondary);
+}
+
+.member-avatars .user-avatar-small:first-child {
+  margin-left: 0;
+}
+
+.member-count {
+  font-size: var(--font-size-caption);
+  color: var(--text-secondary);
+}
+
+/* 聊天主区域 */
+.chat-main {
+  flex: 1;
+  padding: var(--spacing-lg);
+  padding-bottom: calc(120px + env(safe-area-inset-bottom, 0));
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.chat-messages {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+/* 消息项 */
+.message-item {
+  display: flex;
+  flex-direction: column;
+  max-width: 80%;
+}
+
+.message-item.own {
+  align-items: flex-end;
+  align-self: flex-end;
+}
+
+.message-item.other {
+  align-items: flex-start;
+  align-self: flex-start;
+}
+
+.message-item.system-message {
+  align-items: center;
+  align-self: center;
+  max-width: 100%;
+}
+
+.message-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-circle);
+  object-fit: cover;
+  margin-bottom: var(--spacing-xs);
+}
+
+.message-content {
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  font-size: var(--font-size-body);
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+.message-item.own .message-content {
+  background-color: var(--primary-color);
+  color: var(--text-primary);
+}
+
+.message-item.other .message-content {
+  background-color: var(--background-secondary);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.message-item.system-message .message-content {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: var(--text-secondary);
+  font-size: var(--font-size-small);
+  text-align: center;
+}
+
+.message-time {
+  font-size: var(--font-size-caption);
+  color: var(--text-tertiary);
+  margin-top: var(--spacing-xs);
+  padding: 0 var(--spacing-sm);
+}
+
+/* 餐厅选择器 */
+.restaurant-selector {
+  position: fixed;
+  bottom: calc(68px + env(safe-area-inset-bottom, 0));
+  left: var(--spacing-lg);
+  right: var(--spacing-lg);
+  z-index: 50;
+}
+
+.restaurant-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md) var(--spacing-lg);
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  border-radius: var(--radius-lg);
+  font-size: var(--font-size-body);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast) ease;
+  box-shadow: var(--shadow-md);
+}
+
+.restaurant-btn:hover {
+  background-color: #E55A00;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* 输入区域 */
+.chat-input-area {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--background-secondary);
+  border-top: 1px solid var(--border-color);
+  padding: var(--spacing-md) var(--spacing-lg) calc(var(--spacing-md) + env(safe-area-inset-bottom, 0));
+  z-index: var(--z-navigation);
+}
+
+.input-container {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--spacing-sm);
+}
+
+.input-actions {
+  display: flex;
+  gap: var(--spacing-xs);
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  border-radius: var(--radius-circle);
+  cursor: pointer;
+  transition: background-color var(--transition-fast) ease;
+}
+
+.action-btn:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.text-input-wrapper {
+  flex: 1;
+}
+
+.message-input {
+  width: 100%;
+  min-height: 40px;
+  max-height: 100px;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background-color: var(--background-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  font-size: var(--font-size-body);
+  color: var(--text-primary);
+  resize: none;
+  transition: border-color var(--transition-normal) ease;
+}
+
+.message-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.send-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: var(--radius-circle);
+  cursor: pointer;
+  transition: all var(--transition-fast) ease;
+}
+
+.send-btn:hover {
+  background-color: #E6BC00;
+  transform: scale(1.05);
+}
+
+.send-btn:disabled {
+  background-color: var(--border-color);
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* 餐厅选择弹窗 */
+.restaurant-modal {
+  max-height: 70vh;
+}
+
+.restaurant-modal .modal-body {
+  padding: 0;
+}
+
+.restaurant-list {
+  max-height: 50vh;
+  overflow-y: auto;
+}
+
+.restaurant-list .restaurant-card {
+  margin: 0;
+  border-radius: 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.restaurant-list .restaurant-card:last-child {
+  border-bottom: none;
+}
+
+/* ===== 支付页面样式 ===== */
+.payment-page {
+  padding-bottom: calc(80px + env(safe-area-inset-bottom, 0));
+}
+
+/* 订单摘要 */
+.order-summary {
+  background-color: var(--background-secondary);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: var(--spacing-xl);
+  overflow: hidden;
+}
+
+.restaurant-info {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-lg);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.restaurant-image {
+  width: 60px;
+  height: 60px;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.restaurant-details {
+  flex: 1;
+}
+
+.restaurant-name {
+  font-size: var(--font-size-subtitle);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.order-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.order-time,
+.order-members {
+  font-size: var(--font-size-small);
+  color: var(--text-secondary);
+}
+
+/* 价格摘要 */
+.price-summary {
+  padding: var(--spacing-lg);
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-sm);
+}
+
+.price-row:last-child {
+  margin-bottom: 0;
+}
+
+.price-row.total {
+  border-top: 1px solid var(--border-color);
+  padding-top: var(--spacing-sm);
+  margin-top: var(--spacing-sm);
+  font-weight: 600;
+}
+
+.price-label {
+  font-size: var(--font-size-body);
+  color: var(--text-secondary);
+}
+
+.price-value {
+  font-size: var(--font-size-body);
+  color: var(--text-primary);
+  font-family: var(--font-family-number);
+}
+
+.price-row.total .price-label,
+.price-row.total .price-value {
+  font-size: var(--font-size-subtitle);
+  color: var(--text-primary);
+}
+
+/* 分账明细 */
+.payment-details {
+  margin-bottom: var(--spacing-xl);
+}
+
+.payment-list {
+  background-color: var(--background-secondary);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.payment-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-lg);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.payment-item:last-child {
+  border-bottom: none;
+}
+
+.payment-user {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  flex: 1;
+}
+
+.payment-user .user-avatar {
+  width: 40px;
+  height: 40px;
+}
+
+.payment-user-info {
+  flex: 1;
+}
+
+.payment-user-name {
+  font-size: var(--font-size-body);
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.payment-user-items {
+  font-size: var(--font-size-small);
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+.payment-amount {
+  font-size: var(--font-size-subtitle);
+  font-weight: 600;
+  color: var(--text-primary);
+  font-family: var(--font-family-number);
+}
+
+.payment-tips {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-lg);
+  padding: var(--spacing-md);
+  background-color: #FFF9E6;
+  border-radius: var(--radius-md);
+}
+
+.tip-icon {
+  width: 16px;
+  height: 16px;
+  color: var(--secondary-color);
+  flex-shrink: 0;
+}
+
+.payment-tips span {
+  font-size: var(--font-size-small);
+  color: var(--secondary-color);
+}
+
+/* 支付方式 */
+.payment-methods {
+  margin-bottom: var(--spacing-xl);
+}
+
+.method-list {
+  background-color: var(--background-secondary);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.method-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-lg);
+  border-bottom: 1px solid var(--border-color);
+  cursor: pointer;
+  transition: background-color var(--transition-fast) ease;
+}
+
+.method-item:last-child {
+  border-bottom: none;
+}
+
+.method-item:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.method-item.active {
+  background-color: #FFF9E6;
+}
+
+.method-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.method-icon.wechat {
+  background-color: #07C160;
+  color: white;
+}
+
+.method-icon.alipay {
+  background-color: #1677FF;
+  color: white;
+}
+
+.method-info {
+  flex: 1;
+}
+
+.method-name {
+  font-size: var(--font-size-body);
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.method-desc {
+  font-size: var(--font-size-small);
+  color: var(--text-secondary);
+}
+
+.method-radio {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-circle);
+  position: relative;
+  transition: border-color var(--transition-fast) ease;
+}
+
+.method-item.active .method-radio {
+  border-color: var(--primary-color);
+}
+
+.radio-dot {
+  width: 10px;
+  height: 10px;
+  background-color: var(--primary-color);
+  border-radius: var(--radius-circle);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform var(--transition-fast) ease;
+}
+
+.method-item.active .radio-dot {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* 支付状态 */
+.payment-status {
+  margin-bottom: var(--spacing-xl);
+}
+
+.status-list {
+  background-color: var(--background-secondary);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.status-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-lg);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.status-item:last-child {
+  border-bottom: none;
+}
+
+.status-user {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  flex: 1;
+}
+
+.status-user .user-avatar {
+  width: 36px;
+  height: 36px;
+}
+
+.status-indicator {
+  width: 20px;
+  height: 20px;
+  border-radius: var(--radius-circle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.status-indicator.pending {
+  background-color: var(--border-color);
+}
+
+.status-indicator.paid {
+  background-color: var(--success-color);
+}
+
+.status-indicator svg {
+  width: 12px;
+  height: 12px;
+  color: white;
+}
+
+/* 支付底栏 */
+.payment-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--background-secondary);
+  border-top: 1px solid var(--border-color);
+  padding: var(--spacing-lg);
+  padding-bottom: calc(var(--spacing-lg) + env(safe-area-inset-bottom, 0));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-lg);
+  z-index: var(--z-navigation);
+}
+
+.payment-info {
+  flex: 1;
+}
+
+.your-amount {
+  display: block;
+  font-size: var(--font-size-small);
+  color: var(--text-secondary);
+  margin-bottom: 2px;
+}
+
+.amount-value {
+  display: block;
+  font-size: var(--font-size-title);
+  font-weight: 600;
+  color: var(--error-color);
+  font-family: var(--font-family-number);
+}
+
+.payment-btn {
+  min-width: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+}
+
+.btn-amount {
+  font-family: var(--font-family-number);
+  font-weight: 600;
+}
+
+/* 支付成功动画 */
+.success-animation {
+  margin-bottom: var(--spacing-xl);
+}
+
+.success-circle {
+  stroke-dasharray: 314;
+  stroke-dashoffset: 314;
+  animation: drawCircle 0.6s ease-out forwards;
+}
+
+.success-check {
+  stroke-dasharray: 20;
+  stroke-dashoffset: 20;
+  animation: drawCheck 0.3s ease-out 0.6s forwards;
+}
+
+@keyframes drawCircle {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes drawCheck {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.success-details {
+  margin-bottom: var(--spacing-xl);
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-sm);
+}
+
+.detail-item:last-child {
+  margin-bottom: 0;
+}
+
+.detail-label {
+  font-size: var(--font-size-body);
+  color: var(--text-secondary);
+}
+
+.detail-value {
+  font-size: var(--font-size-body);
+  color: var(--text-primary);
+  font-weight: 500;
+}

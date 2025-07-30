@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#FFD100">
+    <title>智能匹配 - 饭友</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body>
+    <div id="app">
+        <!-- 状态栏占位 -->
+        <div class="status-bar"></div>
+        
+        <!-- 导航栏 -->
+        <header class="nav-header">
+            <div class="nav-content">
+                <button class="nav-back" onclick="history.back()">
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <polyline points="15,18 9,12 15,6"/>
+                    </svg>
+                </button>
+                <h1 class="nav-title">智能匹配</h1>
+                <button class="nav-btn text-btn" id="cancelBtn">取消</button>
+            </div>
+        </header>
+
+        <!-- 主要内容 -->
+        <main class="main-content matching-page">
+            <!-- 匹配进度区域 -->
+            <section class="matching-progress">
+                <div class="progress-circle">
+                    <svg class="progress-ring" width="120" height="120">
+                        <circle cx="60" cy="60" r="50" class="progress-track"/>
+                        <circle cx="60" cy="60" r="50" class="progress-bar" id="progressBar"/>
+                    </svg>
+                    <div class="progress-content">
+                        <svg class="matching-icon" viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="3"/>
+                            <circle cx="12" cy="1" r="1"/>
+                            <circle cx="12" cy="23" r="1"/>
+                            <circle cx="4.22" cy="4.22" r="1"/>
+                            <circle cx="19.78" cy="19.78" r="1"/>
+                        </svg>
+                    </div>
+                </div>
+                
+                <h2 class="matching-title">正在为你匹配拼友...</h2>
+                <p class="matching-subtitle" id="matchingStatus">智能分析附近用户</p>
+            </section>
+
+            <!-- 匹配条件 -->
+            <section class="matching-conditions">
+                <h3 class="conditions-title">匹配条件</h3>
+                <div class="conditions-list">
+                    <div class="condition-item">
+                        <svg class="condition-icon" viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12,6 12,12 16,14"/>
+                        </svg>
+                        <div class="condition-content">
+                            <span class="condition-label">用餐时间</span>
+                            <span class="condition-value" id="mealTime">12:00-13:00</span>
+                        </div>
+                    </div>
+                    
+                    <div class="condition-item">
+                        <svg class="condition-icon" viewBox="0 0 24 24">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                        <div class="condition-content">
+                            <span class="condition-label">附近范围</span>
+                            <span class="condition-value" id="location">500米内</span>
+                        </div>
+                    </div>
+                    
+                    <div class="condition-item">
+                        <svg class="condition-icon" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                        <div class="condition-content">
+                            <span class="condition-label">口味偏好</span>
+                            <span class="condition-value" id="preference">川菜、粤菜</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 推荐用户 -->
+            <section class="recommended-users">
+                <h3 class="users-title">
+                    <span>附近拼友</span>
+                    <span class="users-count" id="usersCount">已有12人在附近拼饭</span>
+                </h3>
+                
+                <div class="users-grid" id="usersGrid">
+                    <!-- 用户头像将通过JavaScript动态生成 -->
+                </div>
+            </section>
+
+            <!-- 操作按钮 -->
+            <section class="matching-actions">
+                <button class="secondary-btn" id="adjustBtn">
+                    <svg class="btn-icon" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="3"/>
+                        <path d="M12 1v6M12 17v6M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24M1 12h6M17 12h6"/>
+                    </svg>
+                    调整匹配条件
+                </button>
+            </section>
+        </main>
+    </div>
+
+    <!-- 匹配成功弹窗 -->
+    <div class="modal-overlay" id="successModal" style="display: none;">
+        <div class="modal-content success-modal">
+            <div class="success-icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M20 6L9 17l-5-5"/>
+                </svg>
+            </div>
+            <h3 class="success-title">匹配成功！</h3>
+            <p class="success-text">找到3位拼友，快去聊天室讨论吧</p>
+            <div class="matched-users">
+                <!-- 匹配成功的用户头像 -->
+            </div>
+            <button class="primary-btn" id="enterChatBtn">进入拼饭群</button>
+        </div>
+    </div>
+
+    <script src="../js/utils.js"></script>
+    <script src="../js/components.js"></script>
+    <script src="../js/matching.js"></script>
+</body>
+</html>
